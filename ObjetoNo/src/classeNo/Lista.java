@@ -52,4 +52,25 @@ public class Lista {
 		}
 		
 	}
+	
+	public boolean localizar (int n){
+		No aux = cabeca_lista;
+		boolean encontrou = false;
+		while((aux != null) && (!encontrou)){
+			if(aux.info == n){
+				encontrou = true;
+			}
+			aux = aux.prox;
+		}
+		return encontrou;
+	}
+	
+	public void remover_inicio(){
+		
+		if(cabeca_lista != null){
+			
+			cabeca_lista = cabeca_lista.prox;
+		}
+		
+	}
 }
