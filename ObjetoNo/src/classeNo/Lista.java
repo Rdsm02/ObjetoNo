@@ -73,4 +73,60 @@ public class Lista {
 		}
 		
 	}
-}
+	
+	public void remover_final(){
+		
+		No aux;
+		aux = cabeca_lista;
+		
+		while(aux.prox.prox != null){
+			aux = aux.prox;
+		}
+		aux.prox = null;
+		
+		}
+	
+	public int getQtdElementos(){
+		
+		int qtd = 0;
+		No aux = cabeca_lista;
+		while(aux != null){
+			qtd = qtd + 1;
+			aux = aux.prox;
+		}
+		return qtd;
+		
+	}
+	
+//	public String renomear_posicao(int posicao){
+//		No aux = cabeca_lista;
+//		String msg = " ";
+//		qtd_elementos = getQtdElementos();
+//		if(cabeca_lista == null){
+//			msg = "Lista Vazia";
+//					
+//		}else if(qtd_elementos < posicao){
+//			msg = "Menos elementos do que a posicao requerida";
+//		}else if(posicao == 1){
+//			remover_inicio();
+//			msg = "Removido inicio";
+//		}else if(posicao == qtd_elemento){
+//			remover_final();
+//			msg = "Removido Final";
+//		}else{
+//			for(int i = 1; i < posicao; i++){
+//				aux = aux.prox;
+//			}
+//			No aux2 = aux.prox;
+//			aux.prox = aux2.prox;
+//			msg = "Removido meio";
+//		}
+//	}
+	
+//	public void remover_fim(){
+//		
+//		aux1 = cabeca_lista
+//	}
+		
+		
+	}
