@@ -37,4 +37,43 @@ public class ListaDuplamenteEncadeada {
 		}
 		
 	}
+	
+	public String Listar(){
+		
+		No2 aux;
+		aux = cabeca_lista;
+		String lista = "";
+		while(aux != null){
+			lista += ""+aux.info+"";
+			aux	= aux.prox;
+		}
+		return lista;
+	}
+	
+	public void insere_ordenado(int n){
+		
+		No2 aux = cabeca_lista;
+		No2 novo_no = new No2(n);
+		if(aux == null){ // lista vazia
+			cabeca_lista = novo_no;
+		}else{
+			while(aux.conteudo < n && aux.prox != null){
+				aux = aux.prox;								
+			}if(aux.conteudo < n){
+				aux.prox = novo_no;
+				novo_no.ant = aux;
+			}if(aux.conteudo>n){
+				if(aux.ant == null){
+					aux.ant = novo_no;
+					novo_no.prox = aux;
+					cabeca_lista = novo_no;
+				}else{
+					novo_no.prox = aux;
+					novo_no.ant = aux.ant;
+					aux.ant.prox = novo_no;
+					aux.ant = novo_no;
+				}
+			}
+		}
+	}
 }
